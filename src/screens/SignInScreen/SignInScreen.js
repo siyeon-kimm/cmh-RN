@@ -4,23 +4,25 @@ import Logo from '../../../assets/images/Logo_1.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton'; 
 import SocialSignInButtons from '../../components/SocialSignInButtons';
+import { useNavigation } from '@react-navigation/native';
 
 const SignInScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const {height} = useWindowDimensions();
+    const navigation = useNavigation();
 
     const onSignInPressed = () => {
-        console.warn('Sign In');
+        navigation.navigate('Home');
     };
 
     const onForgotPasswordPressed = () => {
-        console.warn('onForgotPasswordPressed');
+        navigation.navigate("ForgotPassword");
     };
 
     const onSignUpPress = () => {
-        console.warn('onSignUpPress');
+        navigation.navigate('SignUp');
     };
 
     return (
@@ -35,13 +37,13 @@ const SignInScreen = () => {
             <CustomInput 
                 placeholder="Email" 
                 value={email} 
-                setValue={setEmail} 
+                setValue={setEmail}
             />
             <CustomInput 
                 placeholder="Password" 
                 value={password} 
                 setValue={setPassword}
-                secureTextEntry
+                secureTextEntry={true}
             />
 
             <CustomButton text="Sign In" onPress={onSignInPressed} />

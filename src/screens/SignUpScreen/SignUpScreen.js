@@ -3,6 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton'; 
 import SocialSignInButtons from '../../components/SocialSignInButtons';
+import { useNavigation } from '@react-navigation/native';
 
 const SignUpScreen = () => {
     const [username, setUsername] = useState('');
@@ -10,12 +11,14 @@ const SignUpScreen = () => {
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
 
+    const navigation = useNavigation();
+
     const onRegisterPressed = () => {
-        console.warn('Sign in');
+        navigation.navigate('ConfirmEmail');
     };
     
     const onSignInPress = () => {
-        console.warn('onSignInPress');
+        navigation.navigate('SignIn');
     };
 
     const onTermsOfUsePressed = () => {
@@ -33,7 +36,7 @@ const SignUpScreen = () => {
             <CustomInput 
                 placeholder="Username" 
                 value={username} 
-                setValue={setUsername} 
+                setValue={setUsername}
             />
             <CustomInput 
                 placeholder="Email" 
