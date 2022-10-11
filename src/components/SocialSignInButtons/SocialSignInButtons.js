@@ -18,19 +18,19 @@ const SocialSignInButtons = () => {
     return (
         <>
             <CustomButton
-                text="Sign In with Naver"
+                text="네이버로 시작하기"
                 onPress={onSignInNaver}
-                bgColor="#98fb98"
-                fgColor="#2e8b57"
+                bgColor="#00ff7f"
+                fgColor="#008000"
             />
             <CustomButton
-                text="Sign In with Google"
+                text="구글로 시작하기"
                 onPress={onSignInGoogle}
-                bgColor="#FAE9EA"
-                fgColor="#ff7f50"
+                bgColor="#b0e0e6"
+                fgColor="#4169e1"
             />
             <CustomButton
-                text="Sign In with Kakao"
+                text="카카오로 시작하기"
                 onPress={onSignInKakao}
                 bgColor="#ffd700"
                 fgColor="#8b4513"

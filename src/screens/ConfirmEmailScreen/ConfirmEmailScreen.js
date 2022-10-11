@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton'; 
-import SocialSignInButtons from '../../components/SocialSignInButtons';
 import { useNavigation } from '@react-navigation/native';
 
 const ConfirmEmailScreen = () => {
@@ -11,7 +10,7 @@ const ConfirmEmailScreen = () => {
     const navigation = useNavigation();
 
     const onConfirmPressed = () => {
-        navigation.navigate('Home');
+        navigation.navigate('SignIn');
     };
     
     const onSignInPress = () => {
@@ -24,25 +23,25 @@ const ConfirmEmailScreen = () => {
 
     return (
         <View style={styles.root}>
-            <Text style={styles.title}>Confirm your email</Text>
+            <Text style={styles.title}>이메일 인증</Text>
           
             <CustomInput 
-                placeholder="Enter your confirmation code" 
+                placeholder="인증코드를 입력해주세요" 
                 value={code} 
                 setValue={setCode} 
             />
             
 
-            <CustomButton text="Confirm" onPress={onConfirmPressed} />
+            <CustomButton text="인증하기" onPress={onConfirmPressed} />
 
             <CustomButton 
-                text="Resend code" 
+                text="다시 전송하기" 
                 onPress={onResendPress}
                 type="SECONDARY" 
             />
 
             <CustomButton 
-                text="Back to Sign in" 
+                text="로그인 하기" 
                 onPress={onSignInPress}
                 type="TERTIARY" 
             />

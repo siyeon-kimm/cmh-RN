@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton'; 
-import SocialSignInButtons from '../../components/SocialSignInButtons';
 import { useNavigation } from '@react-navigation/native';
 
 const NewPasswordScreen = () => {
@@ -12,7 +11,7 @@ const NewPasswordScreen = () => {
     const navigation = useNavigation();
 
     const onSubmitPressed = () => {
-        navigation.navigate('Home');
+        navigation.navigate('SignIn');
     };
     
     const onSignInPress = () => {
@@ -21,24 +20,24 @@ const NewPasswordScreen = () => {
 
     return (
         <View style={styles.root}>
-            <Text style={styles.title}>Reset your password</Text>
+            <Text style={styles.title}>비밀번호 재설정</Text>
           
             <CustomInput 
-                placeholder="Code" 
+                placeholder="인증코드를 입력해주세요" 
                 value={code} 
                 setValue={setCode} 
             />
             
             <CustomInput 
-                placeholder="Enter your new password" 
+                placeholder="새로운 비밀번호를 입력해주세요" 
                 value={newPassword} 
                 setValue={setNewPassword} 
             />
 
-            <CustomButton text="Submit" onPress={onSubmitPressed} />
+            <CustomButton text="완료" onPress={onSubmitPressed} />
 
             <CustomButton 
-                text="Back to Sign in" 
+                text="로그인 하기" 
                 onPress={onSignInPress}
                 type="TERTIARY" 
             />

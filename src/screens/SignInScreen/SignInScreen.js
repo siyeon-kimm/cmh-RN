@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, Image, StyleSheet, useWindowDimensions, ScrollView} from 'react-native';
-import Logo from '../../../assets/images/Logo_1.png';
+import Logo from '../../../assets/images/project_logo.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton'; 
 import SocialSignInButtons from '../../components/SocialSignInButtons';
@@ -35,32 +35,33 @@ const SignInScreen = () => {
             />
 
             <CustomInput 
-                placeholder="Email" 
+                placeholder="이메일 입력" 
                 value={email} 
                 setValue={setEmail}
             />
             <CustomInput 
-                placeholder="Password" 
+                placeholder="비밀번호 입력" 
                 value={password} 
                 setValue={setPassword}
                 secureTextEntry={true}
             />
 
-            <CustomButton text="Sign In" onPress={onSignInPressed} />
+            <CustomButton text="로그인" onPress={onSignInPressed} />
 
             <CustomButton 
-                text="Forgot password?" 
+                text="회원가입" 
+                onPress={onSignUpPress}
+                type="SECONDARY" 
+            />
+
+            <CustomButton 
+                text="비밀번호 찾기" 
                 onPress={onForgotPasswordPressed}
                 type="TERTIARY" 
             />
 
             <SocialSignInButtons />
 
-            <CustomButton 
-                text="Don't have an account? Create one" 
-                onPress={onSignUpPress}
-                type="TERTIARY" 
-            />
         </View>
         </ScrollView>
     );

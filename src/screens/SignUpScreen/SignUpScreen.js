@@ -31,50 +31,40 @@ const SignUpScreen = () => {
 
     return (
         <View style={styles.root}>
-            <Text style={styles.title}>Create an account</Text>
+            <Text style={styles.title}>계정 생성</Text>
           
             <CustomInput 
-                placeholder="Username" 
+                placeholder="아이디를 입력해주세요" 
                 value={username} 
                 setValue={setUsername}
             />
             <CustomInput 
-                placeholder="Email" 
+                placeholder="이메일을 입력해주세요" 
                 value={email} 
                 setValue={setEmail} 
             />
             <CustomInput 
-                placeholder="Password" 
+                placeholder="비밀번호를 입력해주세요" 
                 value={password} 
                 setValue={setPassword}
                 secureTextEntry
             />
             <CustomInput 
-                placeholder="Repeat Password" 
+                placeholder="비밀번호를 한번 더 입력해주세요" 
                 value={passwordRepeat} 
                 setValue={setPasswordRepeat}
                 secureTextEntry
             />
 
-            <CustomButton text="Register" onPress={onRegisterPressed} />
-
-            <Text style={styles.text}>
-                By registering, you confirm that you accept our{' '}
-                <Text style={styles.link} onPress={onTermsOfUsePressed}>
-                    Terms of Use
-                </Text>{' '}and{' '}  
-                <Text style={styles.link} onPress={onPrivacyPressed}> 
-                    Privacy Policy
-                </Text>
-            </Text>
-
-            <SocialSignInButtons />
+            <CustomButton text="가입하기" onPress={onRegisterPressed} />
 
             <CustomButton 
-                text="Have an account? Sign in" 
+                text="계정이 이미 있으신가요?" 
                 onPress={onSignInPress}
-                type="TERTIARY" 
+                type="TERTIARY"
             />
+
+            <SocialSignInButtons />
         </View>
     );
 };
@@ -93,9 +83,6 @@ const styles = StyleSheet.create({
     text: {
         color:'gray',
         marginVertical: 10,
-    },
-    link: {
-        color: '#FDB075'
     },
 });
 

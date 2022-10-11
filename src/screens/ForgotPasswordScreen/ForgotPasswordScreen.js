@@ -20,19 +20,19 @@ const ForgotPasswordScreen = () => {
 
     return (
         <View style={styles.root}>
-            <Text style={styles.title}>Reset your password</Text>
+            <Text style={styles.title}>비밀번호 재설정</Text>
           
             <CustomInput 
-                placeholder="Username" 
+                placeholder="이메일을 입력해주세요" 
                 value={username} 
                 setValue={setUsername} 
             />
             
 
-            <CustomButton text="Send" onPress={onSendPressed} />
+            <CustomButton text="전송" onPress={onSendPressed} />
 
             <CustomButton 
-                text="Back to Sign in" 
+                text="로그인 하기" 
                 onPress={onSignInPress}
                 type="TERTIARY" 
             />
